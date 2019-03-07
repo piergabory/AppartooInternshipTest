@@ -15,11 +15,17 @@ class LocationPreviewModalController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
 
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        mapView.delegate = self
+        mapView.showsUserLocation = true
+    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        mapView.delegate = self
 
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2DMake(specificBarToShow!.coordinates.latitude, specificBarToShow!.coordinates.longitude)

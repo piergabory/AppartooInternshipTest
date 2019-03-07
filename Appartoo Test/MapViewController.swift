@@ -20,6 +20,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
 
         mapView.delegate = self
+        mapView.showsUserLocation = true
 
         // centrer la carte sur Paris
         mapView.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2DMake(48.8566, 2.3488), latitudinalMeters: 10000, longitudinalMeters: 10000), animated: true)
