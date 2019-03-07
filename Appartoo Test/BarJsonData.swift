@@ -15,7 +15,9 @@ struct BarJsonData {
 
     var bars: Array<Bar> {
         get {
-            return (data["bars"] as! NSArray).map({ Bar(from: $0 as! Dictionary<String, AnyObject>) })
+            return (data["bars"] as! NSArray)
+                .map { Bar(from: $0 as! Dictionary<String, AnyObject>) }
+                .sorted { $0.name < $1.name }
         }
     }
 
