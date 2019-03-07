@@ -33,8 +33,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
             return annotation
         }
-        mapView.addAnnotations(dropPins)
 
+        mapView.addAnnotations(dropPins)
     }
 
 }
