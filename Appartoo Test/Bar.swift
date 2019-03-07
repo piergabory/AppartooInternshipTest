@@ -14,7 +14,7 @@ struct Bar {
     let name: String
     let url: URL
     let imageUrl: URL
-    let tags: Array<String>
+    let tags: String
     let coordinates: (latitude: Double, longitude: Double)
 
     init(from parsedJson: Dictionary<String, AnyObject>) {
@@ -23,10 +23,10 @@ struct Bar {
         name = parsedJson["name"] as! String
         url = URL(string: "https://www.google.com")!              // URL(string: parsedJson["url"] as! String)!
         imageUrl = URL(string: "https://www.google.com")!              // URL(string: parsedJson["imageUrl"] as! String)!
-        tags = []             // parsedJson["tags"] as! Array<String>
-        coordinates = (0,0)               // (
-//            latitude: parsedJson["latitude"] as! Double,
-//            longitude: parsedJson["longitude"] as! Double
-//        )
+        tags = parsedJson["tags"] as? String ?? ""
+        coordinates =  (
+            latitude: parsedJson["latitude"] as! Double,
+            longitude: parsedJson["longitude"] as! Double
+        )
     }
 }
