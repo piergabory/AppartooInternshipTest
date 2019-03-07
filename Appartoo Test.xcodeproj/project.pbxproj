@@ -14,8 +14,10 @@
 		D41BD9FE2231605E00526973 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D41BD9FD2231605E00526973 /* Assets.xcassets */; };
 		D41BDA012231605E00526973 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D41BD9FF2231605E00526973 /* LaunchScreen.storyboard */; };
 		D41BDA09223161AF00526973 /* BarJsonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BDA08223161AF00526973 /* BarJsonData.swift */; };
-		D41BDA0B2231624C00526973 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = D41BDA0A2231624C00526973 /* data.json */; };
 		D41BDA0D2231675900526973 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BDA0C2231675900526973 /* Bar.swift */; };
+		D41BDA122231795800526973 /* BarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BDA112231795800526973 /* BarTableViewCell.swift */; };
+		D41BDA1422317F9100526973 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = D41BDA1322317F9100526973 /* data.json */; };
+		D41BDA1B22318F6B00526973 /* LocationPreviewModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BDA1A22318F6B00526973 /* LocationPreviewModalController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +30,10 @@
 		D41BDA002231605E00526973 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D41BDA022231605E00526973 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D41BDA08223161AF00526973 /* BarJsonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarJsonData.swift; sourceTree = "<group>"; };
-		D41BDA0A2231624C00526973 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		D41BDA0C2231675900526973 /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
+		D41BDA112231795800526973 /* BarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarTableViewCell.swift; sourceTree = "<group>"; };
+		D41BDA1322317F9100526973 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		D41BDA1A22318F6B00526973 /* LocationPreviewModalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPreviewModalController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +52,7 @@
 			children = (
 				D41BD9F32231605D00526973 /* Appartoo Test */,
 				D41BD9F22231605D00526973 /* Products */,
+				D41BDA152231809700526973 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +70,8 @@
 				D41BDA0E22316AB400526973 /* Model */,
 				D41BD9F42231605D00526973 /* AppDelegate.swift */,
 				D41BD9F62231605D00526973 /* ListViewController.swift */,
+				D41BDA1A22318F6B00526973 /* LocationPreviewModalController.swift */,
+				D41BDA112231795800526973 /* BarTableViewCell.swift */,
 				D41BD9F82231605D00526973 /* MapViewController.swift */,
 				D41BD9FA2231605D00526973 /* Main.storyboard */,
 				D41BD9FD2231605E00526973 /* Assets.xcassets */,
@@ -77,11 +84,18 @@
 		D41BDA0E22316AB400526973 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D41BDA0A2231624C00526973 /* data.json */,
+				D41BDA1322317F9100526973 /* data.json */,
 				D41BDA08223161AF00526973 /* BarJsonData.swift */,
 				D41BDA0C2231675900526973 /* Bar.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		D41BDA152231809700526973 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,6 +130,11 @@
 				TargetAttributes = {
 					D41BD9F02231605D00526973 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -144,8 +163,8 @@
 			files = (
 				D41BDA012231605E00526973 /* LaunchScreen.storyboard in Resources */,
 				D41BD9FE2231605E00526973 /* Assets.xcassets in Resources */,
-				D41BDA0B2231624C00526973 /* data.json in Resources */,
 				D41BD9FC2231605D00526973 /* Main.storyboard in Resources */,
+				D41BDA1422317F9100526973 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,9 +177,11 @@
 			files = (
 				D41BDA0D2231675900526973 /* Bar.swift in Sources */,
 				D41BD9F92231605D00526973 /* MapViewController.swift in Sources */,
+				D41BDA1B22318F6B00526973 /* LocationPreviewModalController.swift in Sources */,
 				D41BD9F52231605D00526973 /* AppDelegate.swift in Sources */,
 				D41BD9F72231605D00526973 /* ListViewController.swift in Sources */,
 				D41BDA09223161AF00526973 /* BarJsonData.swift in Sources */,
+				D41BDA122231795800526973 /* BarTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

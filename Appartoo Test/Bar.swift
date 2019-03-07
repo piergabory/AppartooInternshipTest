@@ -21,8 +21,8 @@ struct Bar {
         id = parsedJson["id"] as! Int
         address =  parsedJson["address"] as! String
         name = parsedJson["name"] as! String
-        url = URL(string: "https://www.google.com")!              // URL(string: parsedJson["url"] as! String)!
-        imageUrl = URL(string: "https://www.google.com")!              // URL(string: parsedJson["imageUrl"] as! String)!
+        url = URL(string: parsedJson["url"] as! String)!
+        imageUrl = URL(string: "https://loremflickr.com/100/100")!//parsedJson["image_url"] as! String)!
         tags = parsedJson["tags"] as? String ?? ""
         coordinates =  (
             latitude: parsedJson["latitude"] as! Double,

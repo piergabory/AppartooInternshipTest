@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,38 +10,45 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View-->
+        <!--List View-->
         <scene sceneID="IEy-GP-zMf">
             <objects>
-                <tableViewController id="DDv-dz-rUJ" customClass="ListViewController" customModule="Appartoo_Test" sceneMemberID="viewController">
+                <tableViewController title="List View" id="DDv-dz-rUJ" customClass="ListViewController" customModule="Appartoo_Test" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Yqe-t6-bc3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="barListCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reusable bar cell" textLabel="I48-Uo-PDi" detailTextLabel="gwS-7h-RHL" style="IBUITableViewCellStyleSubtitle" id="7hF-W4-jmn">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reusable bar cell" textLabel="I48-Uo-PDi" detailTextLabel="gwS-7h-RHL" imageView="s5G-Wf-jLf" style="IBUITableViewCellStyleSubtitle" id="7hF-W4-jmn" customClass="BarTableViewCell" customModule="Appartoo_Test">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7hF-W4-jmn" id="Yhl-4Y-pDW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I48-Uo-PDi">
-                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="75" y="5" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gwS-7h-RHL">
-                                            <rect key="frame" x="16" y="25.5" width="33" height="14.5"/>
+                                            <rect key="frame" x="75" y="25.5" width="33" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="no image" id="s5G-Wf-jLf">
+                                            <rect key="frame" x="16" y="0.0" width="44" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="mov-Vc-6yR" kind="presentation" identifier="Show single location" modalPresentationStyle="formSheet" id="ivE-cm-DxY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -49,41 +56,86 @@
                             <outlet property="delegate" destination="DDv-dz-rUJ" id="wn5-R3-9LC"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="View" id="KSI-wV-Nuw"/>
+                    <tabBarItem key="tabBarItem" title="La table View" image="list" id="KSI-wV-Nuw"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgD-Jd-70N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-303"/>
+            <point key="canvasLocation" x="659" y="-741"/>
         </scene>
-        <!--Map-->
+        <!--Location Preview Modal Controller-->
+        <scene sceneID="2pb-NY-npB">
+            <objects>
+                <viewController id="mov-Vc-6yR" customClass="LocationPreviewModalController" customModule="Appartoo_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Hd-vh-Vmh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="w3d-Te-qWT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wa0-sG-FZE">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="478"/>
+                                    </mapView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkS-kn-MdC">
+                                        <rect key="frame" x="0.0" y="478" width="320" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="5Jz-sc-uUs"/>
+                                        </constraints>
+                                        <state key="normal" title="Dismiss"/>
+                                        <connections>
+                                            <action selector="dismissModal:" destination="mov-Vc-6yR" eventType="touchUpInside" id="FjE-y8-mdc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="w3d-Te-qWT" firstAttribute="leading" secondItem="4Cy-FE-sui" secondAttribute="leading" id="bLM-79-zGJ"/>
+                            <constraint firstAttribute="bottom" secondItem="w3d-Te-qWT" secondAttribute="bottom" id="ccs-TT-P79"/>
+                            <constraint firstItem="w3d-Te-qWT" firstAttribute="top" secondItem="8Hd-vh-Vmh" secondAttribute="top" id="lTN-oK-PUc"/>
+                            <constraint firstAttribute="trailing" secondItem="w3d-Te-qWT" secondAttribute="trailing" id="myS-ja-fmC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Cy-FE-sui"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="wa0-sG-FZE" id="DUU-CG-l19"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4op-8N-5W9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1458.75" y="-741.54929577464793"/>
+        </scene>
+        <!--La Map avec tout les points-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="MapViewController" customModule="Appartoo_Test" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="currentContext" id="8rJ-Kc-sve" customClass="MapViewController" customModule="Appartoo_Test" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oWw-du-4wY">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oWw-du-4wY" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="1Dc-SU-Aer"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="oWw-du-4wY" secondAttribute="bottom" id="3uh-pN-j9f"/>
-                            <constraint firstItem="oWw-du-4wY" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="AHB-0G-dqa"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="oWw-du-4wY" secondAttribute="trailing" id="GPo-iT-vv7"/>
+                            <constraint firstItem="oWw-du-4wY" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="W3m-od-SVg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="La Map avec tout les points" image="drop pin" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="mapView" destination="oWw-du-4wY" id="MLa-MV-DqZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
+            <point key="canvasLocation" x="750" y="426"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -105,6 +157,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="second" width="30" height="30"/>
+        <image name="drop pin" width="100" height="100"/>
+        <image name="list" width="100" height="100"/>
+        <image name="no image" width="100" height="100"/>
     </resources>
 </document>
