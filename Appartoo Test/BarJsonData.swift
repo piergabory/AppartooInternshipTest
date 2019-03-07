@@ -22,15 +22,8 @@ struct BarJsonData {
     }
 
     init() {
-        guard
-            let path = Bundle.main.path(forResource: jsonFileName, ofType: "json"),
-            let fileData = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe),
-            let parsedJsonData = try? JSONSerialization.jsonObject(with: fileData, options: .mutableLeaves) as? Dictionary<String, AnyObject>
-        else {
-            data = [:]
-            return
-        }
-
-        data = parsedJsonData!
+        let path = Bundle.main.path(forResource: jsonFileName, ofType: "json")
+        let fileData = try! Data(contentsOf: URL(fileURLWithPath: path!), options: .mappedIfSafe)
+        data = try! JSONSerialization.jsonObject(with: fileData, options: .mutableLeaves) as! Dictionary<String, AnyObject>
     }
 }
