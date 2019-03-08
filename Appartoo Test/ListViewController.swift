@@ -8,13 +8,35 @@
 
 import UIKit
 
-class ListViewController: UITableViewController {
+class ListViewController: UITableViewController, UISearchBarDelegate {
 
     let data = BarJsonData()
+    @IBOutlet weak var barSearchBar: UISearchBar!
+
+
+    private var visibleBars: Array<Bar> {
+        get {
+            return data.bars.filter {
+                if let key = barSearchBar?.text, key != "" {
+                    return $0.name.contains(key)
+                } else {
+                    return true
+                }
+            }
+        }
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        barSearchBar.delegate = self
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let barCell = tableView.dequeueReusableCell(withIdentifier: "reusable bar cell", for: indexPath) as! BarTableViewCell
-        let bar = data.bars[indexPath.item]
+        let bar = visibleBars[indexPath.item]
+
+
 
         barCell.textLabel?.text = bar.name
         barCell.detailTextLabel?.text = bar.address
@@ -31,11 +53,15 @@ class ListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.bars.count
+        return visibleBars.count
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        tableView.reloadData()
     }
 
 

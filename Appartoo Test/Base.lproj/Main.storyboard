@@ -18,9 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search a bar in the searchbar" id="yvD-R2-lby">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reusable bar cell" textLabel="I48-Uo-PDi" detailTextLabel="gwS-7h-RHL" imageView="s5G-Wf-jLf" style="IBUITableViewCellStyleSubtitle" id="7hF-W4-jmn" customClass="BarTableViewCell" customModule="Appartoo_Test">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7hF-W4-jmn" id="Yhl-4Y-pDW">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -58,6 +63,9 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="La table View" image="list" id="KSI-wV-Nuw"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="barSearchBar" destination="yvD-R2-lby" id="9Hh-qv-gzY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgD-Jd-70N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
